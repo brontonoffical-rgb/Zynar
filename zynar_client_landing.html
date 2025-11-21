@@ -1,0 +1,265 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ZynarClient — Landing Template</title>
+  <meta name="description" content="Шаблон лендинга для игрового клиента. Адаптивный, тёмная тема, модальные окна и тарифы." />
+  <style>
+    :root{
+      --bg:#0b0b11; --card:#0f0f16; --accent:#9b4dff; --muted:#9aa0aa; --glass: rgba(255,255,255,0.04);
+      --maxw:1200px;
+    }
+    *{box-sizing:border-box}
+    body{margin:0;font-family:Inter, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial;color:#e6eef8;background:linear-gradient(180deg,#05050a 0%, #0b0b11 60%);-webkit-font-smoothing:antialiased}
+    .container{max-width:var(--maxw);margin:0 auto;padding:24px}
+
+    /* Header */
+    header{display:flex;align-items:center;justify-content:space-between;padding:18px 0}
+    .logo{display:flex;align-items:center;gap:12px}
+    .logo img{height:44px;width:44px;object-fit:contain;border-radius:8px;background:linear-gradient(135deg, rgba(155,77,255,0.12), rgba(155,77,255,0.06));padding:6px}
+    nav ul{display:flex;gap:18px;list-style:none;padding:0;margin:0}
+    nav a{color:var(--muted);text-decoration:none;font-weight:600}
+    .cta{display:flex;gap:12px;align-items:center}
+    .btn{padding:10px 16px;border-radius:10px;font-weight:700;cursor:pointer;border:none}
+    .btn-primary{background:linear-gradient(90deg,var(--accent),#6b3cff);color:white;box-shadow:0 6px 18px rgba(155,77,255,0.14)}
+    .btn-ghost{background:transparent;color:var(--muted);border:1px solid rgba(255,255,255,0.04)}
+
+    /* Hero */
+    .hero{display:grid;grid-template-columns:1fr 420px;gap:28px;align-items:center;padding:40px 0}
+    .hero-left h1{font-size:40px;margin:0 0 18px;line-height:1.02}
+    .subtitle{color:var(--muted);max-width:58ch;margin-bottom:20px}
+    .hero-cta{display:flex;gap:12px}
+
+    .hero-right{border-radius:14px;overflow:hidden;background:var(--card);box-shadow:0 10px 60px rgba(0,0,0,0.6);display:flex;align-items:center;justify-content:center;padding:18px}
+    .hero-right img{width:100%;height:100%;object-fit:cover}
+
+    /* Plans */
+    .plans{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:22px}
+    .plan{background:linear-gradient(180deg, rgba(255,255,255,0.015), rgba(255,255,255,0.01));padding:18px;border-radius:12px;border:1px solid rgba(255,255,255,0.03)}
+    .plan h3{margin:0 0 10px}
+    .price{font-size:20px;font-weight:800;color:var(--accent)}
+    .periods{display:flex;gap:8px;margin-top:12px}
+    .period{flex:1;padding:8px;border-radius:8px;background:var(--glass);text-align:center;font-weight:700}
+
+    /* Extras */
+    .extras{display:flex;gap:12px;margin-top:18px}
+    .card{flex:1;padding:14px;border-radius:10px;background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));border:1px solid rgba(255,255,255,0.03)}
+
+    /* FAQ */
+    .faq{margin-top:30px}
+    .qa{background:var(--card);padding:12px;border-radius:10px;margin-bottom:8px}
+    .qa summary{cursor:pointer;font-weight:700}
+    .qa p{color:var(--muted);margin:8px 0 0}
+
+    /* Footer */
+    footer{margin-top:40px;padding:24px 0;border-top:1px solid rgba(255,255,255,0.02);color:var(--muted);display:flex;justify-content:space-between;align-items:center}
+    .socials{display:flex;gap:12px}
+    .socials img{width:34px;height:34px;border-radius:8px;background:var(--glass);padding:6px}
+
+    /* Modals */
+    .modal-backdrop{position:fixed;inset:0;background:rgba(0,0,0,0.6);display:none;align-items:center;justify-content:center;padding:20px}
+    .modal{background:#07070b;padding:20px;border-radius:12px;min-width:320px;max-width:420px;border:1px solid rgba(255,255,255,0.03)}
+    .form-row{display:flex;flex-direction:column;gap:6px;margin-bottom:12px}
+    input[type=text],input[type=email],input[type=password]{padding:10px;border-radius:8px;background:transparent;border:1px solid rgba(255,255,255,0.05);color:#e6eef8}
+
+    /* Responsive */
+    @media (max-width:900px){
+      .hero{grid-template-columns:1fr;}
+      .plans{grid-template-columns:1fr;}
+      nav ul{display:none}
+    }
+  </style>
+</head>
+<body>
+  <!-- NOTE: This is a generic landing template for a gaming client. It is intentionally neutral and does not promote violating terms of service. -->
+  <header class="container">
+    <div class="logo">
+      <!-- replace /mnt/data/logo.png with your logo path -->
+      <img src="/mnt/data/photo_2025-11-01_00-57-31.jpg" alt="logo" />
+      <div>
+        <div style="font-weight:800;font-size:18px">ZynarClient</div>
+        <div style="font-size:12px;color:var(--muted)">Gaming Client — Template</div>
+      </div>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="#">Главная</a></li>
+        <li><a href="#versions">Версии</a></li>
+        <li><a href="#faq">FAQ</a></li>
+        <li><a href="#rules">Правила</a></li>
+        <li><a href="#support">Поддержка</a></li>
+      </ul>
+    </nav>
+    <div class="cta">
+      <button class="btn btn-ghost" onclick="openModal('login')">Войти</button>
+      <button class="btn btn-primary" onclick="openModal('register')">Регистрация</button>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <div class="hero-left">
+        <h1>ZynarClient — Мощный клиент для Minecraft</h1>
+        <div class="subtitle">Современный игровой клиент с продвинутым интерфейсом, обновлениями и поддержкой. Этот шаблон демонстрирует структуру лендинга, адаптивность и UX-компоненты.</div>
+        <div class="hero-cta">
+          <button class="btn btn-primary">Купить сейчас</button>
+          <a class="btn btn-ghost" href="https://discord.gg/wVfmFRyY" target="_blank">Перейти в Discord</a>
+        </div>
+
+        <div style="margin-top:22px">
+          <strong>Версии:</strong>
+          <div style="display:flex;gap:8px;margin-top:8px">
+            <span class="period">ZynarClient Release (v1.16.5)</span>
+            <span class="period">ZynarClient Beta (v1.21.4)</span>
+          </div>
+        </div>
+
+        <!-- Plans preview -->
+        <div class="plans">
+          <div class="plan">
+            <h3>Release — v1.16.5</h3>
+            <div class="price">Цена: <span style="color:var(--muted);font-weight:700">установите цену</span></div>
+            <div class="periods">
+              <div class="period">1 месяц</div>
+              <div class="period">3 месяца</div>
+              <div class="period">1 год</div>
+            </div>
+            <div style="margin-top:12px"><button class="btn btn-primary">Купить</button></div>
+          </div>
+
+          <div class="plan">
+            <h3>Beta — v1.21.4</h3>
+            <div class="price">Цена: <span style="color:var(--muted);font-weight:700">установите цену</span></div>
+            <div class="periods">
+              <div class="period">1 месяц</div>
+              <div class="period">3 месяца</div>
+              <div class="period">1 год</div>
+            </div>
+            <div style="margin-top:12px"><button class="btn btn-primary">Купить</button></div>
+          </div>
+
+          <div class="plan">
+            <h3>Навсегда (Lifetime)</h3>
+            <div class="price">Цена: <span style="color:var(--muted);font-weight:700">установите цену</span></div>
+            <div style="margin-top:12px"><button class="btn btn-primary">Купить навсегда</button></div>
+          </div>
+        </div>
+
+        <div class="extras">
+          <div class="card">
+            <h4>Дополнительные товары</h4>
+            <p style="color:var(--muted)">Сброс HWID — Цена: <strong>по запросу</strong></p>
+          </div>
+          <div class="card">
+            <h4>Обновление</h4>
+            <p style="color:var(--muted)">Обновление с Release до Beta — Цена: <strong>по запросу</strong></p>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="hero-right">
+        <!-- Use the image you provided as hero background. -->
+        <img src="/mnt/data/photo_2025-11-01_00-57-31.jpg" alt="Hero image" />
+      </div>
+    </section>
+
+    <section id="versions" style="margin-top:28px">
+      <h2>Версии и тарифы</h2>
+      <p class="subtitle">Ниже — карточки с деталями по версиям и опции подписки. Цены указаны как заполнитель — замените на реальные значения.</p>
+
+      <!-- Cards per version (more detailed list) -->
+      <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:12px">
+        <div class="card">
+          <h3>ZynarClient Release (v1.16.5)</h3>
+          <ul style="color:var(--muted)">
+            <li>Стандартные обновления</li>
+            <li>Поддержка через Discord</li>
+            <li>Подписки: 1м / 3м / 1г / Lifetime</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>ZynarClient Beta (v1.21.4)</h3>
+          <ul style="color:var(--muted)">
+            <li>Ранний доступ к новым фичам</li>
+            <li>Более частые обновления</li>
+            <li>Подписки: 1м / 3м / 1г / Lifetime</li>
+          </ul>
+        </div>
+      </div>
+
+    </section>
+
+    <section id="faq" class="faq">
+      <h2>FAQ</h2>
+      <div class="qa"><details><summary>Как установить клиент?</summary><p>Инструкцию по установке можно расположить здесь: шаги для скачивания, запуск лаунчера и подключения.</p></details></div>
+      <div class="qa"><details><summary>Какие способы оплаты вы принимаете?</summary><p>Можно указать список: карты, QIWI, криптовалюта и т.д. (настраивается).</p></details></div>
+      <div class="qa"><details><summary>Что делать, если я забыл пароль?</summary><p>Добавьте логику восстановления пароля через Email или поддержку Discord.</p></details></div>
+      <div class="qa"><details><summary>Антивирус ругается на лаунчер. Что делать?</summary><p>Рекомендуется предоставить инструкции: как временно разрешить файл и куда обратиться в поддержку.</p></details></div>
+    </section>
+
+    <section id="rules" style="margin-top:28px">
+      <h2>Правила</h2>
+      <p style="color:var(--muted)">Здесь разместите правила использования продукта, условия возврата средств и другие юридические положения.</p>
+    </section>
+
+    <section id="support" style="margin-top:18px">
+      <h2>Поддержка</h2>
+      <p style="color:var(--muted)">Техническая поддержка осуществляется через наш Discord-сервер.</p>
+      <div style="margin-top:10px"><a class="btn btn-primary" href="https://discord.gg/wVfmFRyY" target="_blank">Открыть Discord</a></div>
+    </section>
+
+  </main>
+
+  <footer class="container">
+    <div>© 2024 ZynarClient. Все права защищены.</div>
+    <div class="socials">
+      <!-- replace with your social icons paths -->
+      <a href="https://discord.gg/wVfmFRyY" target="_blank"><img src="/mnt/data/photo_2025-11-01_00-57-31.jpg" alt="Discord" /></a>
+      <a href="https://t.me/zynarclient" target="_blank"><img src="/mnt/data/photo_2025-11-01_00-57-31.jpg" alt="Telegram" /></a>
+    </div>
+  </footer>
+
+  <!-- Modals (login / register) -->
+  <div id="modalBackdrop" class="modal-backdrop">
+    <div class="modal" id="modalContent">
+      <div id="modalInner"></div>
+    </div>
+  </div>
+
+  <script>
+    function openModal(type){
+      const back=document.getElementById('modalBackdrop');
+      const inner=document.getElementById('modalInner');
+      if(type==='register'){
+        inner.innerHTML = `
+          <h3>Регистрация</h3>
+          <div class="form-row"><label>Придумайте логин</label><input type="text" id="r-login"/></div>
+          <div class="form-row"><label>Введите Email</label><input type="email" id="r-email"/></div>
+          <div class="form-row"><label>Придумайте пароль</label><input type="password" id="r-pass"/></div>
+          <div class="form-row"><label>Подтвердите пароль</label><input type="password" id="r-pass2"/></div>
+          <div style="display:flex;gap:8px;justify-content:flex-end"><button class="btn btn-ghost" onclick="closeModal()">Отмена</button><button class="btn btn-primary" onclick="fakeRegister()">Зарегистрироваться</button></div>
+        `;
+      } else {
+        inner.innerHTML = `
+          <h3>Войти</h3>
+          <div class="form-row"><label>Логин</label><input type="text" id="l-login"/></div>
+          <div class="form-row"><label>Пароль</label><input type="password" id="l-pass"/></div>
+          <div style="display:flex;gap:8px;justify-content:flex-end"><button class="btn btn-ghost" onclick="closeModal()">Отмена</button><button class="btn btn-primary" onclick="fakeLogin()">Войти</button></div>
+        `;
+      }
+      back.style.display='flex';
+    }
+    function closeModal(){document.getElementById('modalBackdrop').style.display='none'}
+    function fakeRegister(){alert('Форма регистрации отправлена (шаблон)');closeModal()}
+    function fakeLogin(){alert('Вход выполнен (шаблон)');closeModal()}
+
+    // Close on backdrop click
+    document.getElementById('modalBackdrop').addEventListener('click', function(e){if(e.target===this) closeModal()});
+
+    // Small accessibility: close on ESC
+    window.addEventListener('keydown', (e)=>{if(e.key==='Escape') closeModal()});
+  </script>
+</body>
+</html>
